@@ -1,0 +1,1723 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../simple_import/">
+      
+      
+        <link rel="next" href="../extended_import/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Specification Import - maximex User Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#create-an-excel-import-file" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="maximex User Manual" class="md-header__button md-logo" aria-label="maximex User Manual" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            maximex User Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Specification Import
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="maximex User Manual" class="md-nav__button md-logo" aria-label="maximex User Manual" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    maximex User Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    maximex User Manual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About the Author
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Product Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changes in recent versions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Document%20Change%20History/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Change History
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Preliminaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preliminaries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Install%20required%20files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Install required files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Remove%20old%20Apache%20POI%20versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Remove old Apache POI versions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Execute%20the%20TPAE%20Configuration%20Program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Execute the TPAE Configuration Program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Enable%20the%20maximex%20in%20your%20applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable the maximex in your applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Finish%20the%20installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finish the installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Uninstalling%20the%20maximex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uninstalling the maximex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Change%20history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Change history
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Guide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simple Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Specification Import
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Specification Import
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-excel-import-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an Excel import file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-a-template-with-specification-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download a template with specification data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-a-search-result-with-specification-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download a search result with specification data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execute-the-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execute the import
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execute the import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xls-file-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      XLS File Upload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-steps-for-the-specification-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processing Steps for the Specification Import
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Steps for the Specification Import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notice" class="md-nav__link">
+    <span class="md-ellipsis">
+      NOTICE
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-the-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      After the import
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extended_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extended Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delete_records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Delete records with Excel Import files - $Delete
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multilanguage_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multilanguage Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADD_only_and_UPDATE_only_Flags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ADD Only and UPDATE only Flags ($ADDONLY, $UPDATEONLY)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ignore%20empty%20cells%20in%20the%20import%20file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ignore empty cells in the import file
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pre-Import%20Check%20Script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pre-Import Check Script
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Execute%20Automation%20Scripts%20during%20the%20import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Execute Automation Scripts during the import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Data%20Management%20Tool%20-%20Download%20Templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Data Management Tool - Download Templates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch%20Export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Batch Export
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Memory%20and%20Performance%20Issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory and Performance Issues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Configuration%20Options%20for%20maximex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration Options for maximex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20Validation%20and%20the%20DataDictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Validation and the DataDictionary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Show%20Import%20History/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Show Import History
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Fieldupdater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Fieldupdater
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Power%20Search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Power Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Mass%20Delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Mass Delete
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Keyupdate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Keyupdate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20import%20with%20the%20commandline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data import with the commandline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import%20Excel%20files%20with%20a%20Crontask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Import Excel files with a Crontask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Periodic%20Export%20of%20Data%20with%20a%20Crontask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Periodic Export of Data with a Crontask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-excel-import-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an Excel import file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-a-template-with-specification-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download a template with specification data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-a-search-result-with-specification-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download a search result with specification data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execute-the-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execute the import
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execute the import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xls-file-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      XLS File Upload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-steps-for-the-specification-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processing Steps for the Specification Import
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Processing Steps for the Specification Import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notice" class="md-nav__link">
+    <span class="md-ellipsis">
+      NOTICE
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-the-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      After the import
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Specification Import</h1>
+
+<p>The Specification Import allows you to:</p>
+<ol>
+<li>Insert new IBM Maximo objects together with their specification attributes</li>
+<li>Add a specification to a IBM Maximo object and set values for the specification
+   attributes</li>
+<li>Update specification attribute values</li>
+</ol>
+<p>The Specification Import can only be used for Maximo objects</p>
+<ul>
+<li>having a CLASSSTRUCTUREID attribute and  </li>
+<li>"Specifications" tab is available for in the application user interface. Please see the <a href="../Configuration%20Options%20for%20maximex/#property-eamimportersheetnameprefixspecification">Property EAM.Importer.SheetNamePrefixSpecification</a></li>
+</ul>
+<h2 id="create-an-excel-import-file">Create an Excel import file</h2>
+<p>Since the Specification Import is an extension of the Simple Import mode, some key
+concepts remain the same. The Excel Format is the same as for the Simple Import
+except for the following conditions:  </p>
+<ul>
+<li>A worksheet in the Excel File contains the specification import data for one
+CLASSSTRUCTUREID.  </li>
+<li>A XLS import file for Specification import can contain more than one worksheet
+with data. This allows you to import different IBM Maximo objects with different
+CLASSSTRUCTUREID's within one import.  </li>
+<li>The name of the worksheet for the specification import starts with "Specification_"
+and is followed by the CLASSSTRUCTUREID.  </li>
+<li>After the last column of the main object attributes there is a separator column. The
+template generator with specification data and search result download with
+specification will insert an empty separation column with a red background colour.  </li>
+<li>The second row of the separator column contains the Name of the Specification
+object surrounded with "!", e.g. !ASSETSPEC!  </li>
+<li>On the right hand side of the separator column are the specification attributes for
+this CLASSSTRUCTUREID. The second row contains the specification attribute names.  </li>
+<li>Specification attributes can have one of three different data types. These are
+ALNVALUE, NUMVALUE or TABLEVALUE . The template generator for specification data
+or the XLS result download with specification data will colorize the specification
+attribute name. The colors are defined in the worksheet "Colorlegende" which is
+generated for every template or search result download.  </li>
+<li>Every Maximo object together with the specification attribute values have to be
+entered in one single row of the XLS worksheet.  </li>
+<li>If you want to insert new data together with the specification attributes into
+Maximo you must make sure, that the CLASSSTRUCTUREID attribute is set for the main
+object. This can be accomplished with either setting attribute directly on the main
+object (a column for the CLASSSTRUCTUREID is available for the main object) or by
+setting other attributes which implicitly s et the CLASSSTRUCTUREID (e.g. setting the
+rotating item (attribute ITEMNUM) for an ASSET)</li>
+</ul>
+<p>As stated above, attribute values of a main Object can be set to NULL (can be cleared)
+by letting the corresponding Excel cell empty. For specification attributes this behavior
+is different. If you want to set a specification attributes to NULL you have to use the
+special value ~<strong>null</strong>~ in the import file ! The reason for this different behavior is as
+follows: Assets can get default values for specification attributes from rotating items
+associated to them. Empty specification attributes in the import file would have
+overwritten those default values.</p>
+<p>Writing a XLS Import file from scratch is a time consuming and error prone task. It is
+therefore much more convenient t o generate an empty template and fill it with new
+data or download a search result with specification data.<br />
+Please download a template or a search result with specification data and make
+yourself familiar with the file layout of the XLS document.<br />
+The following screenshot shows the specification attributes for the CLASSSTRUCTID
+1001 (PUMP CNTRFGL) used in the IBM Maximo demo database. Here you can see
+the red separation column and the specification attributes associated with this class
+structure. The third row contains a demo data set which has no functional impact and
+which can alternatively be cleared.</p>
+<p><img alt="" src="../img/I19.png" /><br />
+<em>Illustration 19: Screenshot XLS file with specification attributes</em></p>
+<h2 id="download-a-template-with-specification-data">Download a template with specification data</h2>
+<p>An empty XLS Template for
+the specification import can be downloaded via the action
+menu item "EAM Data Management Tool" → "EAM Template for Spec Data" (see
+Illustration 20: Select Action menu entry EAM Template for Spec Data).</p>
+<p><img alt="" src="../img/I20.png" /><br />
+<em>Illustration 20: Select Action menu entry EAM Template for Spec Data</em></p>
+<p>This command opens a dialog box where you can select the CLASSSTRUCTUREID for
+the template generator. For each selected CLASSSTRUCTUREID a template according
+to the specifications described above will appear in the result XLS template file.</p>
+<p><img alt="" src="../img/I21.png" />
+<em>Illustration 21: Select Classification specification for XLS template</em></p>
+<p>If you click on the lookup you can select from the available classifications for the current man object</p>
+<p><img alt="" src="../img/I22.png" /><br />
+<em>Illustration 22: Select available Class Structure from Lookup Dialog</em></p>
+<p>After selecting the Classifications click OK. The template is generated and sent to the
+client where you are prompted to save or open the XLS file (depending on the client
+configuration).</p>
+<p><img alt="" src="../img/I23.png" /><br />
+<em>Illustration 23: Internet Explorer open for save dialog</em></p>
+<p>The template for the above selected classifications contains the following worksheets:</p>
+<p><img alt="" src="../img/I24.png" /><br />
+<em>Illustration 24: Screenshot Excel Worksheet names for multiple specifications in one file</em></p>
+<ul>
+<li>The worksheet "Simple" for the Simple import (see the above chapter for a
+description of the simple import)  </li>
+<li>The worksheets "Specification_1001", "Specification_1002",... for the selected
+classifications  </li>
+<li>The DataDictionary  </li>
+<li>The Colorlegende  </li>
+</ul>
+<p>Note:<br />
+If a specification does not contain specification attributes then no worksheet for this
+specification is created! The CLASSSTRUCTUREID for those specifications can be set via the Simple Importer
+in the worksheet "Simple".</p>
+<h2 id="download-a-search-result-with-specification-data">Download a search result with specification data</h2>
+<p>If you want to update specification attributes of existing data (eg. Assets, Locations, Items)
+you could start by creating a "Searchresult with Spec Data" file that contains
+your existing data.</p>
+<p>To do so follow these steps:</p>
+<ol>
+<li>Use the Filter or the advanced search to limit the objects in the list view to those
+   you want to update  </li>
+<li>Select "EAM XLS Searchresult with Spec Data" from the action menu. </li>
+</ol>
+<p>The downloaded Excel document contains nearly all attributes of the Maximo Object.
+   This is similar to the simple search result download.
+   To update specification attributes and to import the downloaded Excel file this search
+   result is not best practice (you would need to delete a lot of attributes from the file
+   before you can re-import it). Therefore , in this case it is recommended to use
+   download templates</p>
+<p><img alt="" src="../img/I25.png" /><br />
+<em>Illustration 25: Select Action menu entry Download seach result with specification data</em></p>
+<ol>
+<li>The "Create XLS Download out of search results with Specification" Dialog will be
+   opened</li>
+</ol>
+<p><img alt="" src="../img/I26.png" /><br />
+<em>Illustration 26: Dialog Create XLS search result download with specification data</em></p>
+<ol>
+<li>
+<p>If you click OK, the XLS File will be generated and sent back to the client.<br />
+The generated XLS file contains all records from the current search result in the list
+   view, but these records may be distributed across different worksheets.  </p>
+</li>
+<li>
+<p>If the Maximo object does not have an attribute CLASSSTRUCTUREID, it is on the
+   worksheet "Simple"  </p>
+</li>
+<li>If the attribute CLASSSTRUCTUREID is available and is empty the Maximo object is
+   also on the worksheet "Simple"  </li>
+<li>If the attribute CLASSSTRUCTUREID has a value but the specified specification does
+   not have specification attributes, then the Maximo object is also on the worksheet
+   "Simple"  </li>
+<li>If the attribute CLASSSTRUCTUREID has a value and there are specification
+   attributes for this specification, then the Maximo object is on the corresponding
+   worksheet for this specification, e.g. "Specification_1001" for CLASSSTRUCTUREID</li>
+</ol>
+<p>Before you can use the Template be sure to:  </p>
+<ul>
+<li>Remove any columns you do not want to set during the import  </li>
+<li>Keep the unique ID colu mn in the template (these attributes have a light green
+background). For new data leave the field empty and the importer will insert the
+unique ID value for the newly created Maximo object in this column.  </li>
+<li>Remove worksheets for CLASSSTRUCTUREID where no dat a should be inserted.</li>
+</ul>
+<h2 id="execute-the-import">Execute the import</h2>
+<h3 id="xls-file-upload">XLS File Upload</h3>
+<p>The import or update of specification data is started from the action menu in the list view of the application.</p>
+<p>The following dialog is opened:</p>
+<p><img alt="" src="../img/img_6.png" /></p>
+<p>Select the file from your file system and press the "Import Data" button. The XLS file is sent to the Maximo server and
+will be processed.</p>
+<h3 id="processing-steps-for-the-specification-import">Processing Steps for the Specification Import</h3>
+<p>The Excel file will be analyzed. The following checks are performed:  </p>
+<ul>
+<li>Is the uploaded file an Excel document  </li>
+<li>Are there any worksheets were the name starts with "Specification_"  </li>
+<li>Are there attribute names in the second row of the worksheets  </li>
+<li>Are the attribute names on the worksheet unique  </li>
+<li>Are data rows in the worksheet available  </li>
+<li>Is there a separation column between the attributes of the target object and the
+specification attributes  </li>
+<li>Is the CLASSSTRUCTUREID parsed from the worksheet name valid  </li>
+<li>In case of an error, an error message is displayed to the user and the import of this
+worksheet is canceled.  </li>
+<li>Analyzing the target object (the current application object)  </li>
+<li>Check if the target object is valid. The name is automatically determined based on
+the Maximo application from where the import is started.  </li>
+<li>Determine the object type. Is it a System Object (e.g. PERSON), SITE Object (e.g.
+LOCATION, ASSET,...) or a ORG Object (e.g.. LABOR, CRAFT,...).  </li>
+<li>Determine the unique ID attribute name. This is unique for every object and
+assigned internally from Maximo. For example ASSETUID for Asset Objects or
+LABORID for Labor objects.  </li>
+<li>Determine the key attribute(s) of the object.  </li>
+<li>Check if all required attributes are available in the Excel document.  </li>
+<li>In case of an error, an error message is displayed to the user and the import is
+canceled.  </li>
+</ul>
+<p>For every data row (remember: starting from row fo ur in the Excel file) do the
+following:</p>
+<ul>
+<li>Based on the information (available attributes in the excel document, known
+properties of the object type like key attributes, unique attributes, object type and
+the available data in Maximo) decide if we update existing data or insert new data.  </li>
+<li>Prior to creating a new object the default insert SiteID, default insert OrgID, default
+ItemSet and default CompSet are set on the MBO Set (depending on the object
+type)  </li>
+<li>For a new object the key attributes are set first.  </li>
+<li>Set other attributes in the same order as they appear in the Excel document. The
+specification attributes are not yet set!  </li>
+<li>Save the object ( the specification attributes are inherited during the save method)  </li>
+<li>Set the specification attributes for this object. The specification attributes are only
+set if they have a value in the XLS file. Otherwise, the default value of this attribute
+from the Classification (or from the rotating item for ASSETS) is preserved.</li>
+</ul>
+<p>If there is an error (either during setting of attributes or during saving) the behavior
+depends on the processing mode. If no column $IMPORTERROR is available in your
+worksheet (processing mode "Stop on Error") an error message is displayed to the
+user and the import is aborted. Every error message during import contains the line
+number of the Excel file and the attribute name which causes the problem. If a column
+$IMPORTERROR is available (processing mode "Continue on Error") the error message
+is not displayed to the user but written to the $IMPORTERROR column of the
+corresponding row. Also, the problematic attribute is highlighted with a red
+background and the import is not aborted but continues with the next row.</p>
+<h4 id="notice">NOTICE</h4>
+<ul>
+<li>Contrary to the Simple Import no columns can be added to the XLS worksheets for
+the specification import (the XLS handling library does not allow to insert columns
+in the middle of the worksheet in front of the separation column). However, if the
+unique ID name column is available but empty , then the value is inserted into the
+XLS file.  </li>
+<li>If an attribute in the Excel document left of the separation column is empty (no
+value in the Excel cell) then the attribute is set to NULL. It is therefore important to
+remove all columns from the excel document which should or cannot set to null or
+fill all columns with the appropriate values  </li>
+<li>Object attributes are only set if the new value from the Excel document is different
+from the current value in the MBO! Specification attributes are always set to the
+given value.  </li>
+<li>Since V6 of maximex the specification attribute data type DATE is
+also supported</li>
+<li>Since 6.1.0 of maximex, the specification attribute data type DATE is also supported when created according to the description <a href="https://www.ibm.com/support/pages/how-do-i-add-datetime-data-type-value-classification-attribute">How do I add a Date/Time Data Type Value to a Classification Attribute</a></li>
+</ul>
+<h3 id="after-the-import">After the import</h3>
+<p>The steps after processing of the uploaded XLS file (display import summary dialog,
+download of the processed XLS file to the client, update list view of the application)
+are identical to the Simple Import and are not repeated here.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 - SPIE RODIAS GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>
