@@ -1,0 +1,1571 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../EAM%20Mass%20Delete/">
+      
+      
+        <link rel="next" href="../Data%20import%20with%20the%20commandline/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>EAM Keyupdate - maximex User Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eam-keyupdate-warnings-and-important-information" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="maximex User Manual" class="md-header__button md-logo" aria-label="maximex User Manual" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            maximex User Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              EAM Keyupdate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="maximex User Manual" class="md-nav__button md-logo" aria-label="maximex User Manual" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    maximex User Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    maximex User Manual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About the Author
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Product Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changes in recent versions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Document%20Change%20History/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Change History
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Preliminaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preliminaries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Install%20required%20files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Install required files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Remove%20old%20Apache%20POI%20versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Remove old Apache POI versions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Execute%20the%20TPAE%20Configuration%20Program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Execute the TPAE Configuration Program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Enable%20the%20maximex%20in%20your%20applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable the maximex in your applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Finish%20the%20installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finish the installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Uninstalling%20the%20maximex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uninstalling the maximex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Change%20history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Change history
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Guide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simple Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Specification Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extended_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extended Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delete_records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Delete records with Excel Import files - $Delete
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multilanguage_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multilanguage Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADD_only_and_UPDATE_only_Flags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ADD Only and UPDATE only Flags ($ADDONLY, $UPDATEONLY)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ignore%20empty%20cells%20in%20the%20import%20file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ignore empty cells in the import file
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pre-Import%20Check%20Script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pre-Import Check Script
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Execute%20Automation%20Scripts%20during%20the%20import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Execute Automation Scripts during the import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Data%20Management%20Tool%20-%20Download%20Templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Data Management Tool - Download Templates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch%20Export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Batch Export
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Memory%20and%20Performance%20Issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory and Performance Issues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Configuration%20Options%20for%20maximex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration Options for maximex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20Validation%20and%20the%20DataDictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Validation and the DataDictionary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Show%20Import%20History/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Show Import History
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Fieldupdater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Fieldupdater
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Power%20Search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Power Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Mass%20Delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Mass Delete
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    EAM Keyupdate
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Keyupdate
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eam-keyupdate-warnings-and-important-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      EAM Keyupdate: Warnings and important information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layout-and-content-of-the-keyupdate-import-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layout and COntent of the Keyupdate Import File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mode-of-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mode of Operation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-of-keyfields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping of keyfields
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20import%20with%20the%20commandline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data import with the commandline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import%20Excel%20files%20with%20a%20Crontask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Import Excel files with a Crontask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Periodic%20Export%20of%20Data%20with%20a%20Crontask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Periodic Export of Data with a Crontask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eam-keyupdate-warnings-and-important-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      EAM Keyupdate: Warnings and important information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layout-and-content-of-the-keyupdate-import-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Layout and COntent of the Keyupdate Import File
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mode-of-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mode of Operation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-of-keyfields" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapping of keyfields
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>EAM Keyupdate</h1>
+
+<p>Key attributes like ASSETNUM in Assets, LOCATION in location, ITEMNUM for items
+and so on can be defined during creation of the Maximo Objects. These key attributes
+are later used in various other tables within the maximo database. Maximo does use
+"foreign keys" or "cascaded updates" in the database, therefore key attributes can not
+be changed later from within Maximo.</p>
+<p>On the other hand there might be valid reasons why we want to change key attributes
+later. These could be:  </p>
+<ul>
+<li>Naming conventions have changed o r new conventions are adopted. Often
+the old key attribute values do not adhere to the new conventions.  </li>
+<li>Company names have changed due to mergers and acquisitions  </li>
+<li>Mistakes during data entry in key attributes should be corrected  </li>
+<li>Required changes during upgrades of Maximo or consolidation of different
+Maximo systems into one.</li>
+</ul>
+<p>Accurate key values allow easier integration and data exchange with other systems
+and also reduce the risk of data entry errors.</p>
+<p>Maximo does not use "foreign keys" in the database directly, but stores the same
+information in its own tables. E.g. the attribute ASSETNUM in the ASSETMETER object
+is defined to be "Same as Object" ASSET and "Same as Attribute" ASSETNUM. If you
+change the length or datatype of the key attribute ASSE TNUM in the ASSET object,
+Maximo also changes all the related attributes in the other tables identified by the
+SAMEASOBJECT and SAMEASATTRIBUTE relations.</p>
+<p>The SAMEASOBJECT and SAMEASATTRIBUTE information can be used to identify all
+possible tables and attr ibutes which can contain a key values. If for example you want
+to change the ITEMNUM of one item in your inventory the SAMEAS information can
+be used to identify all attributes where the ITEMNUM is possibly stored in.</p>
+<p>The EAM Keyupdate feature used exactly this SAMEASOBJECT and SAMEASATTRIBUTE
+information to create the SQL statements. Only if the SAMEAS information is complete
+and valid all occurrences of a key can be identified and renamed. Incomplete
+information in the database configuration such as missing SAMEASOBJECT and
+SAMEASATTRIBUTE data leads to inconsistent data after the keyupdate because not
+all occurrences are renamed.</p>
+<h2 id="eam-keyupdate-warnings-and-important-information">EAM Keyupdate: Warnings and important information</h2>
+<p>When using the EAM Keyupdate please pay attention to the following:  </p>
+<ul>
+<li>Access to the SIGOPTION for EAM Keyupdate should only be granted to those
+users and groups, who know what they are doing.  </li>
+<li>The EAM Keyupdate tool executed SQL statetements directly in the Maximo
+database. Test your keyupdate imports in a test environment.  </li>
+<li>Create a backup of your maximo database bevor using the EAM Keyupdate  </li>
+<li>Make sure that the SAMEASOBJECT and SAMEASATTRIBUTE information in
+your database configuration application is complete and correct. Only then all
+occurrences can be changed and the data is consi stent.  </li>
+<li>Field validator classes and Maximo business logic is not executed when
+working with SQL statements on the database directly. You have to make sure
+that the new values for the key attributes are valid in your Maximo
+environment. Do not write lowercase data in Maximo attributes which are
+defined with datatype UPPER (a lot of them are; it would be allowed in the
+Maximo UI) and check the length of your key attributes.  </li>
+<li>Enable the Admin mode in the database configuration before using the EAM
+Keyupdate. With this precaution changes in the Maximo database can not
+interfere with running integrations or crontasks or other users changing the
+same data. The admin mode is required unless you create the System
+Property „ EAM.Importer.KeyUpdate.NoAdminMode" with a value other than 0.  </li>
+<li>The EAM Keyupdate software tries to verify the new value for the key attribute.
+It creates a new object in the current application and sets the new key value
+into the key attribute. The EAM Keyupdater then reads back the value from
+the object and uses this value for the future processing. If the value which was
+read back from the Object is different from the value in the Import file
+(because the value was converted to uppercase or the fieldvalidator somehow
+changed the value), then the new value is also written back into the excel file.
+This check of the new key attribute values can be skipped if you set the System
+Property „ EAM.Importer.KeyUpdate.SkipKeyValueCheck" to a value other
+than 0.</li>
+</ul>
+<h2 id="layout-and-content-of-the-keyupdate-import-file">Layout and COntent of the Keyupdate Import File</h2>
+<p>The EAM Keyupdate feature uses a Excel import file as datasource. The basic layout is
+similar to the usual import files used to import and update data with the EAM
+Importer. The conventions for the keyupdate import file is as follows:  </p>
+<ul>
+<li>The name of the excel worksheet must start with the prefix „Keyupdate_"  </li>
+<li>The second row of the worksheet contains the attribute names. This
+information is used by the tools and therefore required.  </li>
+<li>The first row usually contains th e attribute titles (in the users language). This
+row is optional and can be empty. This information is filled in if you start with
+a search result download or a generated template.  </li>
+<li>The third row contains sample data and can also be left empty.  </li>
+<li>The user dat a which is processed by the EAM Keyupdater starts in row four!
+(as with the importer)  </li>
+<li>For system level objects (CONDITION, CURRENCY, MAXGROUP, MAXUSER,
+PERSON, SITE, …) two columns are required in the keyupdate import file: The
+key attribute of the object (e.g. PERSON) and the key attribute with the prefix
+„$NEW_" (e.g. $NEW_PERSON). The column with the key attribute contains the
+current (old) value, and the column $NEW_&lt;attributename&gt; contains the new
+value for the key attribute.  </li>
+<li>ORG level, SITE level, ITE MSET level or COMPSET level Maximo objects also
+need the attributes ORGID, SITEID, ITEMSETID or COMPSETID in the keyupdate
+import file to uniquely identify the record.  </li>
+<li>Other column/attributes can be included in the file but are ignored.</li>
+</ul>
+<p>The following screenshot shows a keyupdate import file for ITEM data. This keyupdate
+import changes the ITEMNUM of three items in the ITEM table and all related data.</p>
+<p><img alt="" src="../img/I58.png" />
+<em>Illustration 58: Keyupdate import file for ITEM</em></p>
+<h2 id="mode-of-operation">Mode of Operation</h2>
+<p>The EAM Keyupdate is available in the Select Action Menu in the list view of your
+application (if you have installed maximex for the application
+and granted access to the SIGOPTIONS in the security group application).</p>
+<p><img alt="" src="../img/I59.png" />
+<em>Illustration 59: Select Action Menu with EAM Keyattribute Update option</em></p>
+<p>This action opens the following dialog which displays some warning again:</p>
+<p><img alt="" src="../img/I60.png" />
+<em>Illustration 60: EAM Keyupdate Warnings and Information dialog</em></p>
+<p>The user has to indicate that he has read and unterstood the information by selecting
+the corresponding checkbox. After that select the button "Continue" which opens the
+following Import dialog:</p>
+<p><img alt="" src="../img/I61.png" />
+<em>Illustration 61: EAM Keyupdate file upload dialog</em></p>
+<p>Select the keyupdate import file and click the „Execute Keyupdate" button.<br />
+If there is an error during processing the import file the import will abort and a
+errormessage is displayed to the user. Similar to the normal data import the
+processed Excel file is sent back to the client. Also the import summary is displayed
+and the involved records are shown in the list view.</p>
+<p>Two additional columns are added to the import file during processing:  </p>
+<ol>
+<li>the column $KEYUPD_RESULT holds the overall result for processing this row
+   of data. This is either OK with light green background or Error with a red
+   background.  </li>
+<li>The column $KEYUPD_LOG contains all the SQL Statements which where
+   executed against the database and the number of affected records. These
+   SQL statements where executed within a single database transaction. So if the
+   $KEYUPD_RESULT is OK then all of the SQL statements where executed
+   successfully. Otherwise none of the SQL statements was saved and the
+   transaction was rolled back.</li>
+</ol>
+<p>The following screenshot displays the processed keyupdate import file after updating
+   some ITEMNUMs in the ITEM application:</p>
+<p><img alt="" src="../img/I62.png" />
+<em>Illustration 62: Processed Keyupdate import file for ITEM application</em></p>
+<p>The originally uploaded keyupdate import file and the processed file are also
+saved in the EAM import history.</p>
+<p><img alt="" src="../img/I63.png" />
+<em>Illustration 63: Import history dialog with keyupdate entry in ITEM application</em></p>
+<h2 id="mapping-of-keyfields">Mapping of keyfields</h2>
+<p><em>Since version 6.2.0</em><br />
+During the use of this function we recognized a problem with the level field (SITEID, ORGID, ITEMSETID,...) in the excel file.
+The problem occured, if there is more than one field of this kind in a table.
+For example: 
+If you want to update the location of an asset, there are some tables that have more than one field with "same as" siteid. 
+In this case it would be e.g. the table TICKET with the fields siteid (of course) and assetsiteid. 
+To update the location, the program creates an update sql that searches for the location field and the siteid field in table.
+But if you want the programm to look for assetsiteid, it was not possible until now. That could lead to some problems.</p>
+<p>For this problem, there is now a solution:</p>
+<p><strong>First:</strong> There is a <a href="../Configuration%20Options%20for%20maximex/#property-eamdatamanagementtoolenablefieldmapping"><strong>system property: EAM.DATAMANAGEMENTTOOL.ENABLEFIELDMAPPING</strong></a> if the value is true, the new logic is activated. (false or the absenese of this property means: logic is not activated. The processing is like before)</p>
+<p><strong>Second:</strong> There is a <strong>automation script</strong> with name: <strong>EAM_CHECK_IMPORT_RULE</strong> (In future versions, it is planed, that the name is not fix, but given by the excel sheet). Within this script, you can define the exceptions.</p>
+<p>e.g. First line of script</p>
+<pre><code>result = ""
+</code></pre>
+<p>Then, we have the exception: In this case for the ticket problem</p>
+<pre><code>if (table == "TICKET" and field2update == "LOCATION" and fixedKeyAttribute == "SITEID"):
+    result = "ASSETSITEID"
+</code></pre>
+<p>So the first line of each exception is always the same. Only the values in the "" changes.
+This line says: If we want to update the field LOCATION in table TICKET on level SITEID, then the update command should not look after SITEID, but ASSETSITEID
+Or in short:
+Not 
+    update TICKET set LOCATION = 'LOC2' where LOCATION is 'LOC1' and SITEID = 'SITE1'
+but
+    update TICKET set LOCATION = 'LOC2' where LOCATION is 'LOC1' and ASSETSITEID = 'SITE1'</p>
+<p><strong>Third:</strong> If the new logic is activated, and the program finds a table, that has more than on field, that is same as the level, it will look into the scrtipt to find a solution. If nothing is found, it will raise an error, with exact information about the problem</p>
+<p><img alt="" src="../img/I64.png" />
+ <em>Illustration 64: Example for error message</em></p>
+<p>This picture shows also an example of the script with the correct values</p>
+<pre><code>if (table == 'TICKET' and field2update == 'LOCATION' and fixedKeyAttribute == 'SITEID':
+result = 'Gewählter Wert aus [SITEID, REORDFROMSTORESITEID]'.
+</code></pre>
+<p>You can use this lines for the script. The only thing, that has to be changed are the ' -&gt; "  and of course the values in the result line
+In this example, you can change the lines above to </p>
+<pre><code>if (table == "TICKET" and field2update == "LOCATION" and fixedKeyAttribute == "SITEID":
+    result = "SITEID"
+</code></pre>
+<p>and add the lines to the script.</p>
+<p><img alt="" src="../img/I65.png" />
+ <em>Illustration 65: Automation Script</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 - SPIE RODIAS GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1358 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Data%20Validation%20and%20the%20DataDictionary/">
+      
+      
+        <link rel="next" href="../EAM%20Fieldupdater/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>EAM Show Import History - maximex User Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="maximex User Manual" class="md-header__button md-logo" aria-label="maximex User Manual" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            maximex User Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              EAM Show Import History
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="maximex User Manual" class="md-nav__button md-logo" aria-label="maximex User Manual" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    maximex User Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    maximex User Manual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About the Author
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Product Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changes in recent versions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Document%20Change%20History/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Change History
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Preliminaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preliminaries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Install%20required%20files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Install required files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Remove%20old%20Apache%20POI%20versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Remove old Apache POI versions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Execute%20the%20TPAE%20Configuration%20Program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Execute the TPAE Configuration Program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Enable%20the%20maximex%20in%20your%20applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable the maximex in your applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Finish%20the%20installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finish the installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Uninstalling%20the%20maximex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uninstalling the maximex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Change%20history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Change history
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Guide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simple Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Specification Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extended_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extended Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delete_records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Delete records with Excel Import files - $Delete
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multilanguage_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multilanguage Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADD_only_and_UPDATE_only_Flags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ADD Only and UPDATE only Flags ($ADDONLY, $UPDATEONLY)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ignore%20empty%20cells%20in%20the%20import%20file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ignore empty cells in the import file
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pre-Import%20Check%20Script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pre-Import Check Script
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Execute%20Automation%20Scripts%20during%20the%20import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Execute Automation Scripts during the import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Data%20Management%20Tool%20-%20Download%20Templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Data Management Tool - Download Templates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch%20Export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Batch Export
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Memory%20and%20Performance%20Issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory and Performance Issues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Configuration%20Options%20for%20maximex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration Options for maximex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20Validation%20and%20the%20DataDictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Validation and the DataDictionary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Show Import History
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Fieldupdater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Fieldupdater
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Power%20Search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Power Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Mass%20Delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Mass Delete
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Keyupdate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Keyupdate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20import%20with%20the%20commandline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data import with the commandline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import%20Excel%20files%20with%20a%20Crontask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Import Excel files with a Crontask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Periodic%20Export%20of%20Data%20with%20a%20Crontask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Periodic Export of Data with a Crontask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>EAM Show Import History</h1>
+
+<p>The action menu entry "EAM Show Import History" gives the user an overview of the
+past imports in the current Maximo/SCCD application. This gives you an overview of
+how this tool is used. It also allows you to download past imports or imports from
+other users in the current Maximo/SCCD application. These downloaded files can be a
+good starting point for your new imports or for updating previously imported data.
+You could also use a previously imported file as a template (see EAM Data
+Management Tool Download Templates for more information about
+download templates.</p>
+<p>The user can find the EAM Show Import History menu option alongside the other EAM
+Data Management Tool men u options in the list view of your Maximo application (see
+Illustration 43: EAM Show Import History Select Action menu item).</p>
+<p><img alt="" src="../img/I43.png" />
+<em>Illustration 43: EAM Show Import History Select Action menu item</em></p>
+<p>If you select this menu item the Show Import History dialog 
+is opened (see Illustration 44: Show Import History dialog).</p>
+<p><img alt="" src="../img/I44.png" />
+<em>Illustration 44: Show Import History dialog</em></p>
+<p>This Dialog shows the following information: </p>
+<ul>
+<li>Importnumber; this is the internal unique ID of the import  </li>
+<li>Importfile Name; the original name of the import file which was uploaded by the
+user into Maximo  </li>
+<li>Import Mode; indicates the used Import Mode for the given Excel file. Possible
+values are SIMPLE, EXTENDED and SPEC.  </li>
+<li>Import Status; indicates if the import was successful or if a error occurred. Possible
+values are: OK, FAILED, XLS ERROR, XLS EMPTY, NO LICENSE, IN PARTS OK and
+ERRORS  </li>
+<li>Enter by shows which user executed the import  </li>
+<li>Enter date shows the timestamp of the import  </li>
+<li>Inserted Rows shows the number of new main object s created during the import
+of the given XLS file  </li>
+<li>Updates Rows shows the number of main objects which where updates during the
+import  </li>
+<li>Skipped Rows shows the number of records which where skipped because the
+corresponding Mbo was readonly and could not be modified at all.  </li>
+<li>Deleted Mainobj. Shows the number of main objects which where deleted from
+Maximo. Records which where not available in Maximo and where therefore not
+created are not counted.  </li>
+<li>Deleted Childobj shows the number of child ob jects which where deleted directly
+from Maximo. Child objects which are deleted by the Maximo business logic when
+you delete a main objects are not included.  </li>
+<li>Errors is the number of errors. If no $ImportError column is available in your
+worksheet the error count could be 0 or 1. With an $ImportError column (Continue
+on Error mode) the error count could be greater than 1.  </li>
+<li>The first download icon allows the download of the original XLS file which was sent
+to the Maximo server  </li>
+<li>The second download icon allows th e download of the result XLS file that was sent
+back to the client after the import process. This file contains usually the unique ID
+values of the objects which where written back to the XLS file during the import
+process.  </li>
+<li>The last icon allows you to download a detailed log which war created during the
+import. The logfile shows which data was read from the excel file and how the
+importer decides whether to create a new object or modify an existing object. This
+feature is useful if you suspect an error in y our input file or the EAM
+Datamanagement Tool importer component itself. To enable logging you have to
+set the system property „ EAM.Importer.DebugLog" to 1 (default value is 0; no
+logfile is created or stored).</li>
+</ul>
+<p>The records in the dialog can be filtered to show only those with a selected import
+mode, a selected Status, a given user name...</p>
+<p>The import history can also be used to download previously successfully imported
+files and use them as template for future imports.<br />
+Only the imports for the current application are shown in the dialog starting with the
+most recent import.<br />
+Access to this action menu entry can be granted in the security groups in the same
+way as for the other action menu entries for maximex. </p>
+<p><img alt="" src="../img/I45.png" />
+<em>Illustration 45: Import History with Continue on Error Mode</em></p>
+<p>The import Status OK in the Import History dialog shows that the import completed
+without any errors. On the other hand FAILED indicates that there was an error and
+the import was aborted after this error. An errormessage was displayed to the user.</p>
+<p>With the new Continue on Error Mode (see 5.15.1 Importer Processing Modes) there is 
+now a new Import Status called ERRORS which is set when one or more
+import errors occurred in Continue on Error mode.</p>
+<p>The recent versions of the import history dialog also display the error count. In the
+older versions error count was either 0 or 1 and this corresponds to Import status OK
+and FAILED respectively.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 - SPIE RODIAS GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>

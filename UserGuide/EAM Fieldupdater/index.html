@@ -1,0 +1,1521 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../EAM%20Show%20Import%20History/">
+      
+      
+        <link rel="next" href="../EAM%20Power%20Search/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>EAM Fieldupdater - maximex User Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eam-fieldupdater-select-allowed-relations-and-attributes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="maximex User Manual" class="md-header__button md-logo" aria-label="maximex User Manual" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            maximex User Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              EAM Fieldupdater
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="maximex User Manual" class="md-nav__button md-logo" aria-label="maximex User Manual" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    maximex User Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    maximex User Manual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About the Author
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Product Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changes in recent versions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Document%20Change%20History/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Change History
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Preliminaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preliminaries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Install%20required%20files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Install required files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Remove%20old%20Apache%20POI%20versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Remove old Apache POI versions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Execute%20the%20TPAE%20Configuration%20Program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Execute the TPAE Configuration Program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Enable%20the%20maximex%20in%20your%20applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable the maximex in your applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Finish%20the%20installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finish the installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Uninstalling%20the%20maximex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uninstalling the maximex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Change%20history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Change history
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Guide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simple Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Specification Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extended_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extended Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delete_records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Delete records with Excel Import files - $Delete
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multilanguage_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multilanguage Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADD_only_and_UPDATE_only_Flags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ADD Only and UPDATE only Flags ($ADDONLY, $UPDATEONLY)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ignore%20empty%20cells%20in%20the%20import%20file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ignore empty cells in the import file
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pre-Import%20Check%20Script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pre-Import Check Script
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Execute%20Automation%20Scripts%20during%20the%20import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Execute Automation Scripts during the import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Data%20Management%20Tool%20-%20Download%20Templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Data Management Tool - Download Templates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch%20Export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Batch Export
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Memory%20and%20Performance%20Issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory and Performance Issues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Configuration%20Options%20for%20maximex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration Options for maximex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20Validation%20and%20the%20DataDictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Validation and the DataDictionary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Show%20Import%20History/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Show Import History
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    EAM Fieldupdater
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Fieldupdater
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eam-fieldupdater-select-allowed-relations-and-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      EAM Fieldupdater - Select allowed relations and attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eam-fieldupdater-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      EAM Fieldupdater History
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Power%20Search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Power Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Mass%20Delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Mass Delete
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Keyupdate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Keyupdate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20import%20with%20the%20commandline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data import with the commandline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import%20Excel%20files%20with%20a%20Crontask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Import Excel files with a Crontask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Periodic%20Export%20of%20Data%20with%20a%20Crontask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Periodic Export of Data with a Crontask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#eam-fieldupdater-select-allowed-relations-and-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      EAM Fieldupdater - Select allowed relations and attributes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eam-fieldupdater-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      EAM Fieldupdater History
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>EAM Fieldupdater</h1>
+
+<p>In standard Maximo system it is intended to change one record at a time, then save
+your changes and then move to the next record. Keeping your data in Maximo up to
+date can sometimes mean to change an attribute in a lot of records which might be a
+daunting task in Maximo. One possible solution is of course the EAM Importer. You
+can export your data to Excel, there edit it and then re-import it into Maximo. Another
+possible solution for this task is presented in this chapter: The EAM Fieldupdater.</p>
+<p>The EAM Fieldupdater allows you to update field values in objects of the current
+search result or in related objects which can be selected via a relation.</p>
+<p>Note: 
+To avoid this being a security risk the Maximo administrator can define the available
+attributes and relations with the tool "EAM Enter allowed Fields for Update Tool"! It is
+very important that this step is not skipped and only those fields and relations are
+explicitly allowed which should be available in the EAM Fieldupdater. By default, all
+relations and attributes are available in the EAM Fieldupdater. This setting also limit
+the relations which can be selected when downloading a XLS Extended Template or a
+search result with extended data.</p>
+<p>To use the EAM Fieldupdater follow there steps:  </p>
+<ol>
+<li>
+<p>Set a filter to select the records you want to change</p>
+</li>
+<li>
+<p>Start the EAM Fieldupdater from the action menu:</p>
+<p><img alt="" src="../img/I46.png" />
+<em>Illustration 46: Select Action menu item EAM Fieldupdater</em></p>
+<p>Selecting this menu item opens the EAM Fieldupdater dialog. Illustration 47: EAM
+Fieldupdater dialog; change attribute DEPARTMENT to IT shows the dialog with an
+example where a user sets the attribute DEPARTMENT for all records of the current
+search result in the list view to the value IT.</p>
+<p><img alt="" src="../img/I47.png" />
+<em>Illustration 47: EAM Fieldupdater dialog; change attribute DEPARTMENT to IT</em></p>
+</li>
+<li>
+<p>Add a row for every field you want to change.</p>
+</li>
+<li>
+<p>If you do not select a relation you can set values for the attributes of the main
+      object of the current application. For "Field name" you can choose from the
+      available and allowed fields for the current objects.</p>
+</li>
+<li>If you select a relation from the list of available and allowed relations f or the
+      object the "Field name" only allows you to enter field names of the
+      corresponding child object of this relation.</li>
+<li>Insert the new attribute value in "Field value". This is a required field. If you
+      want to clear the attribute value (set to NULL), then insert the special value
+      ~<strong>null</strong>~</li>
+<li>If you want to append the given value to the already existing value then select
+      the checkbox "Append ?" (see illustration 48)<ol>
+<li>Example: Some records are selected in the ASSET Application and you open the EAM
+     Fieldupdater from the action menu. If you want to update fields from the ASSET object
+     itself then you do not choose a relation and you can select from the available and
+     allowed field names of the ASSET object. </li>
+<li>If you intend to update the the description of all the SPAREPARTS for your ASSETS in
+the search result you select the relation "SPAREPART". The lookup for Field name only
+shows you the available and allowed attributes for the SPAREPART object where you
+can select DESCRIPTION.</li>
+<li><img alt="" src="../img/I48.png" />
+     <em>Illustration 48: Append a string to a description with the fieldupdater</em></li>
+</ol>
+</li>
+<li>For Field value you enter the new field value. If the "Append" check box is not
+      checked, the given field value will be set on the given attributes replacing the
+      old value, otherwise the given value is appended to the current value of the
+      specified attribute.</li>
+<li>If you want to change more than one attribute you can add new rows and
+      specify other attributes.</li>
+<li>Click OK to start the update process. A confirmation message is shown</li>
+</ol>
+<p><img alt="" src="../img/I49.png" />
+<em>Illustration 49: Confirmation Question for the EAM Fieldupdater</em></p>
+<ol>
+<li>If you confirm the system message with Yes, the fields are changed and the ilst view is updated.</li>
+</ol>
+<p>NOTICE: <br />
+If there is an error during the Update (e.g. read only attribute, string too long, date
+format not valid, inserted value not in value list,...) then the update is NOT interrupted
+but continues. All error messages are collected and shown at the end of the update.</p>
+<p>The main advantages of the EAM Fieldupdater:</p>
+<ul>
+<li>You save time (and money) because time consuming record by record
+updates can be replaced by a few clicks.  </li>
+<li>No necessity for direct updates with SQL code in the Maximo Database! Direct
+manipulation in the database is dangerous and requires SQL knowledge
+(which also depends on the database system). The EAM Fieldupdater uses
+the Maximo Business Objects (Mbo's). This is secure, complies with your 
+business logic reflected in the Mbos, and of course also recognizes the
+security settings and data restrictions.  </li>
+<li>Mass data updates via the Fieldupdater are suggested to be performed by
+power user s of your Maximo installation. If at all SQL updates in the database
+were usually done by administrators only.  </li>
+<li>Easy update of virtual attributes of the Maximo objects (like longdescription).
+This is no so straightforward with SQL since the longdescription is a separate
+database table.  </li>
+<li>Current data and easy data maintenance leads to greater acceptance and
+satisfied users.</li>
+</ul>
+<h2 id="eam-fieldupdater-select-allowed-relations-and-attributes">EAM Fieldupdater - Select allowed relations and attributes</h2>
+<p>By default the EAM Fieldupdater allows the user to choose from all defined relations
+and all available attributes from the current main object.</p>
+<p>There are two main reasons why the administrator should specify the allowed fields
+and relations:</p>
+<ol>
+<li><strong>Security</strong> . Without limitation the user could change fields which might otherwise
+   not be visible in the User Interface. Or the user could change fields in objects (via a
+   relation) where the user otherwise might not have access to in the first place.</li>
+<li><strong>Usability</strong> . For every Maximo object there is a large number of relations defined.
+   They are mostly used internally to gather related information for objects and are
+   not intended to update or modify information.</li>
+</ol>
+<p>To specify the allowed relations and attributes follow these steps:</p>
+<p>Select the menu option "EAM Enter allowed Fields for Update Tool" from
+   the action menu of the application.</p>
+<p><img alt="" src="../img/I50.png" />
+<em>Illustration 59: Select Action menu item EAM Enter allowed Fields for Update Tool</em></p>
+<p>This opens a dialog which shows the currently allowed fields and relations for the
+current application.</p>
+<p><img alt="" src="../img/I51.png" />
+<em>Illustration 51: EAM Fieldupdater Filter Configuration dialog in Maximo 6.2</em></p>
+<p>Note:
+If there are no restrictions for the current parent object then the list is empty and no
+restrictions are effective. All relations and attributes are available in the EAM
+Fieldupdater!</p>
+<p>As soon as you specify at least one attribute or relation everything is forbidden except
+the now explicitly allowed relations or attributes.</p>
+<p>This dialog allows you to specify allowed fields and relations. There are three possible
+ways to accomplish this:  </p>
+<ol>
+<li>To allow the update of a field in the current object to updated via the EAM
+   Fieldupdater select the field from the lookup of the Field name control without
+   specifying a relation.</li>
+<li>To allow the update of all attributes in a specific child objec t in the EAM
+   Fieldupdater select the relation name to the child object from the lookup near the
+   Relation control.</li>
+<li>To allow the update of one specific attribute in a child object in the EAM Fieldupdater
+select the relation name to the child object. Then select the attribute
+   from Field name lookup which now shows all attributes of the child object.</li>
+</ol>
+<p>After you have finished the definition of permissable attributes and relations you click
+   OK and your settings are saved in Maximo.</p>
+<p>You can change your settings any time you want. Please also note that these settings
+   are common for all Maximo users and security groups and can not be defined for
+   users or security groups individually.</p>
+<h2 id="eam-fieldupdater-history">EAM Fieldupdater History</h2>
+<p>Depending on the configuration of maximex Field Updater
+each update process is logged.</p>
+<p><img alt="" src="../img/I52.png" />
+<em>Illustration 52: EAM Fieldupdater History dialog</em></p>
+<p>The Field Update History Dialog contains a main table and a details table. For each
+Field Update run there is one entry in the main table which shows the date, time,
+duration number of affected rows and the rows with errors.</p>
+<p>The details table below the main table shows for every affected object the Object
+name, the relationship from the main object to the target object (if any), the attribute
+title, theold attribute value, the new attribute value, a success indicator and a update
+log.</p>
+<p>If the field update for the object was successful, the update log contains information
+to uniquely identify the object. In case of an error a Maximo error message is also
+displayed and shows the reason for the error.</p>
+<p>The following screenshot shows the error messages if you want to change the
+installation date of some assets to the value "invaliddate", which is clearly not a date:</p>
+<p><img alt="" src="../img/I53.png" />
+<em>Illustration 53: Field Updater Histroy with error messages due to an invalid date</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 - SPIE RODIAS GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>

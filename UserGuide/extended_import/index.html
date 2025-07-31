@@ -1,0 +1,1802 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../specification_import/">
+      
+      
+        <link rel="next" href="../delete_records/">
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Extended Import - maximex User Manual</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#create-an-excel-import-file" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="maximex User Manual" class="md-header__button md-logo" aria-label="maximex User Manual" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            maximex User Manual
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Extended Import
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="maximex User Manual" class="md-nav__button md-logo" aria-label="maximex User Manual" data-md-component="logo">
+      
+  <img src="../../img/favicon.png" alt="logo">
+
+    </a>
+    maximex User Manual
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    maximex User Manual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About the Author
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Product Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Changes in recent versions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Document%20Change%20History/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Document Change History
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Preliminaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Preliminaries
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Install%20required%20files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Install required files
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Remove%20old%20Apache%20POI%20versions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Remove old Apache POI versions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Execute%20the%20TPAE%20Configuration%20Program/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Execute the TPAE Configuration Program
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Enable%20the%20maximex%20in%20your%20applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable the maximex in your applications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Finish%20the%20installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Finish the installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Uninstalling%20the%20maximex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uninstalling the maximex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/Change%20history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Change history
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Guide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simple_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Simple Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specification_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Specification Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Extended Import
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Extended Import
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-excel-import-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an Excel import file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-a-template-for-the-extended-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download a Template for the extended import
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-a-search-result-with-extended-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download a search result with extended data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execute-the-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execute the Import
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execute the Import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cls-file-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLS File Upload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-steps-for-the-extended-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processing Steps for the Extended Import
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-the-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      After the Import
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multilevel-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multilevel Import
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multilevel Import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-groups-applications-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Groups - Applications - Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failure-class-problem-cause-remedy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failure Class - Problem - Cause - Remedy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../delete_records/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Delete records with Excel Import files - $Delete
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multilanguage_import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Multilanguage Import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ADD_only_and_UPDATE_only_Flags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ADD Only and UPDATE only Flags ($ADDONLY, $UPDATEONLY)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ignore%20empty%20cells%20in%20the%20import%20file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ignore empty cells in the import file
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Pre-Import%20Check%20Script/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pre-Import Check Script
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Execute%20Automation%20Scripts%20during%20the%20import/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Execute Automation Scripts during the import
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Data%20Management%20Tool%20-%20Download%20Templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Data Management Tool - Download Templates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Batch%20Export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Batch Export
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Memory%20and%20Performance%20Issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Memory and Performance Issues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Configuration%20Options%20for%20maximex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuration Options for maximex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20Validation%20and%20the%20DataDictionary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Validation and the DataDictionary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Show%20Import%20History/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Show Import History
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Fieldupdater/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Fieldupdater
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Power%20Search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Power Search
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Mass%20Delete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Mass Delete
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EAM%20Keyupdate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EAM Keyupdate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data%20import%20with%20the%20commandline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data import with the commandline
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import%20Excel%20files%20with%20a%20Crontask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Import Excel files with a Crontask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Periodic%20Export%20of%20Data%20with%20a%20Crontask/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Periodic Export of Data with a Crontask
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-excel-import-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an Excel import file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-a-template-for-the-extended-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download a Template for the extended import
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-a-search-result-with-extended-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download a search result with extended data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#execute-the-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execute the Import
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Execute the Import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cls-file-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLS File Upload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#processing-steps-for-the-extended-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processing Steps for the Extended Import
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-the-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      After the Import
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multilevel-import" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multilevel Import
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Multilevel Import">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-groups-applications-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Groups - Applications - Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failure-class-problem-cause-remedy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Failure Class - Problem - Cause - Remedy
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Extended Import</h1>
+
+<p>The Extended Import or 1:n Import allows you to:</p>
+<ul>
+<li>Insert new Maximo objects together with related child objects like ASSETS with
+SPAREPARTS or JOBPLAN with JOBTASK or PO with POLINE objects  </li>
+<li>Add or update child object data for existing parent objects  </li>
+</ul>
+<p>In Maximo (or rather in the Tivoli Process Automation Engine) you can define
+relationships between Maximo objects. Not all relations can be used with the
+importer. To import new child objects with the extended import only "real dependent"
+objects can be created. "Real dependent" objects are those which always require a
+higher level object to be meaningful (e.g. a POLINE makes only sense with a related
+PO object).</p>
+<h2 id="create-an-excel-import-file">Create an Excel import file</h2>
+<p>The Extended Import is also, like the Specification Import, an extension to the Simple
+Import mode of the EAM Importer and shares some key concepts with the Simple
+Import mode. However, the following conditions apply for the Excel File contents:  </p>
+<ul>
+<li>Only 1:n relations are allowed. Relations like 1:n:m like INVOICE INVOICELINE
+INVOICECOST are not supported. </li>
+<li>A XLS Import file for the Extended Import can contain more than one worksheets
+with data.  </li>
+<li>A worksheet in the Excel file contains the data for one relation from the parent
+object to the child object.  </li>
+<li>The name of the worksheet for the Extended Import starts with "Extended_" and is
+followed by the relation name. Worksheet names in XLS are limited to 31 characters.
+For long relationship names the template generator and search result download will
+only use the first 31 characters of the resulting worksheet name.  </li>
+<li>After the last column of the main/parent object attributes a separation column is
+inserted. The template generator and search result download with extended data
+insert the separation column with a red background.  </li>
+<li>The second row of the separator column contains the name of the relation
+surrounded with "!", e.g. !SPAREPART!.  </li>
+<li>On the right hand side of the separation column are the attributes of the child
+object. Required fields, unique ID Column, key column,... have a background color
+according to the colorlegende (see Simple Import above for a description)</li>
+<li>For one record of th e main/parent object (left of the separator column) there are
+0...n entries on the related object side (right of the separator column). The first child
+record is always on the same row as the main object data.  </li>
+<li>The import is processed row by row and the obj ect is saved every time a "new" main
+object is encountered.</li>
+</ul>
+<p>Writing a XLS import file for the extended import from scratch is a time consuming
+and error-prone task and should be avoided. It is recommended to start with a
+generated template or a downloaded search result with extended data or to start with
+a demo XLS file.<br />
+The following screenshot shows a simple worksheet for the extended import. The first
+ASSET EAM_e01 has two SPAREPART children. The basic layout is the same as for the
+simple import (row 1 : attribute title, row 2: attribute name, row 3: sample data row,
+row 4: first data row to import. See the format description above)</p>
+<p><img alt="" src="../img/I27.png" /><br />
+<em>Illustration 27: Worksheet for extended import with child object</em></p>
+<h2 id="download-a-template-for-the-extended-import">Download a Template for the extended import</h2>
+<p>To download an empty XLS template for the extended import select the action menu
+item "EAM Data Management Tool" → "EAM generate extended XLS Template" in the
+list view of an application.</p>
+<p><img alt="" src="../img/I28.png" /><br />
+<em>Illustration 28: Select Action menu entry EAM generate extended XLS template</em></p>
+<p>This command opens a dialog box where you can select the relation to the child object.
+For every selected relation a separate worksheet is created in the XLS template file.</p>
+<p><img alt="" src="../img/I29.png" /><br />
+<em>Illustation 29: Dialog: create extended XLS Template</em></p>
+<p>The lookup lets you select the available and allowed relations for the main object of
+the current application.</p>
+<p>NOTICE:<br />
+The administrator can and should limit the available relations in this lookup to those
+which are needed and are useful for the application! This task can be accomplished
+with the "EAM Enter allowed Fields for the Update Tool". See chapter "EAM
+Fieldupdater - Select allowed relations and attributes" for detailed
+instructions.<br />
+After selecting the relations click OK. The generated template is sent to the client and
+the user is prompted to save or open the XLS file (this may vary on your client and
+depends on the client configuration).</p>
+<p>Lets assume you have selected the Relation SPAREPART in the above dialog in the
+ASSET application. The generated XLS template would then contain three worksheets:</p>
+<ul>
+<li>"Extended_SPAREPART" is the worksheets for the extended import  </li>
+<li>"DataDictionary" contains the Data dictionary for the main object  </li>
+<li>"Colorlegende" contains a description of the used colors in the worksheets and
+their meaning. (See the simple import above for a detailed description)</li>
+</ul>
+<h2 id="download-a-search-result-with-extended-data">Download a search result with extended data</h2>
+<p>If you want to add or update related child data to existing parent objects it is very
+useful to download the existing data as a XLS file suitable for the extended import.<br />
+Follow these steps to download a search result with extended data:</p>
+<ol>
+<li>Use the Filter or the advanced search to limit the objects in the list view to those
+   parent objects you want to include in the XLS file</li>
+<li>Select "EAM XLS Extended searchresult download" from the action menu</li>
+<li>The dialog "Create XLS Download inclusive Child Data Sets 1:n" opens
+<img alt="" src="../img/img_7.png" /></li>
+<li>In the Dialog select the relation(s) to the child data which shall be included in the
+   extended search result download. For every selected relation a separate worksheet
+   is created in the XLS file.</li>
+<li>Optional: Check the checkbox if you want to save the attributes of the main object
+in every row. This is only useful if you want to process the result outside of maximo
+   or you want to make some pivot tables. Usually you do NOT want to check this
+   checkbox!  </li>
+<li>Click OK. The generated search result with the selected child object data is sent to
+   the client.</li>
+</ol>
+<p>Every worksheet in the downloaded search result contains all records from the search
+   result and the corresponding child record s which are fetched through the specified
+   relation.<br />
+   Before you can use the template be sure to:  </p>
+<ul>
+<li>Remove any columns you do not want to set during the import on the parent object
+   side as well as on the child object side  </li>
+<li><strong>Keep the unique ID columns</strong> in the template (these attributes have a light green
+   background). For new data leave the unique ID fields empty because the importer
+   then will insert the unique ID values for the newly created Maximo parent and child
+   objects in the corresponding columns.</li>
+</ul>
+<h2 id="execute-the-import">Execute the Import</h2>
+<h3 id="cls-file-upload">CLS File Upload</h3>
+<p>The import or update of specification data is started from the action menu in the list
+view of the application. Select "EAM Data Importer" from the action menu in the list
+view of the application. See Illustration 15: Select Action menu Item EAM Data
+Importer for a screenshot.</p>
+<h3 id="processing-steps-for-the-extended-import">Processing Steps for the Extended Import</h3>
+<p>The Excel file will be analyzed. The following checks are performed:  </p>
+<ul>
+<li>Is the uploaded file a Excel document  </li>
+<li>Are there any worksheets were the name starts with "Extended_"  </li>
+<li>Are there attribute names in the second row of the worksheets    </li>
+<li>Are the attribute names on the worksheet for the parent object and for the child
+object unique  </li>
+<li>Are data rows in the worksheet available  </li>
+<li>Is there a separation column between the attributes of the parent object and the
+child object  </li>
+<li>Is the relation name parsed from the worksheet name valid  </li>
+<li>Is there a valid child object for the given relation  </li>
+</ul>
+<p>In case of an error a error message is displayed to the user and the import of this
+worksheet is canceled.</p>
+<ul>
+<li>Analyzing the target object (the current application object; the parent object)  </li>
+<li>Check if the target object is valid. The name is automatically determined based on
+the Maximo application from where the import is started.  </li>
+<li>Determine the object type. Is it a System Object (e.g. PERSON), SITE Object (e.g.
+LOCATION, ASSET,...) or a ORG Object (e.g.. LABOR, CRAFT,...).  </li>
+<li>Determine the unique ID attribute name. This is unique for every object and
+assigned internally from Maximo. For example ASSETUID for Asset Objects or
+LABORID for Labor objects.  </li>
+<li>Determine the key attribute(s) of the object.  </li>
+<li>Check if all required attributes are available in the Excel document.  </li>
+</ul>
+<p>In case of an error a error message is displayed to the user and the import is canceled.</p>
+<ul>
+<li>Analyzing the child object:   </li>
+<li>Check if child object is valid.  </li>
+<li>Determine the child object type. Is it a System Object (e.g. PERSON), SITE
+Object (e.g. LOCATION, ASSET,...) or a ORG Object (e.g.. LABOR, CRAFT,...).  </li>
+<li>Determine the unique ID attribute name of the child object. This is unique
+for every object and assigned internally from Maximo. For example
+ASSETUID for Asset Objects or LABORID for Labor objects.  </li>
+<li>Determine the key attribute(s) of the child object.    </li>
+<li>For every parent object row (remember: starting from row four in the Excel file) do
+the following:  </li>
+<li>Based on the information (available attributes in the excel document, known
+properties of the object type like key attributes, unique attributes, object type and
+the available data in Maximo) decide if we update existing parent object data or
+insert a new parent object.  </li>
+<li>$Delete column available and contains 1 (or Y or something which evaluates to True
+for a Maximo YORN field) Do not create the object or delete it if it is already available.  </li>
+<li>Prior to creating a new parent object the default insert SiteID, default insert Org ID,
+default ItemSet and default CompSet are set on the MBO Set (depending on the
+object type)</li>
+<li>For a new parent object the key attributes are set first.  </li>
+<li>Set other attributes of the parent object in the same order as they appear in the
+Excel document.  </li>
+<li>Retrieve the child set via the given relation. First the relation name derived from the
+worksheet name is used. If no valid relation can be found (the worksheet name
+might be incomplete because only 31 characters are allowed for XLS worksheet
+names) then the relation name from the separator column is used. If the parent
+object is a new object and we already have child data available, then we stop the
+import with an error message because the relation is not a "real" 1:n relation.  </li>
+<li>Determine the number of child obje cts for the current parent object in the XLS file  </li>
+<li>For every child object in the XLS file do the following:  </li>
+<li>Search for the child object in the child dataset (with unique ID, with key columns
+of the child object, with key columns from the child and values borrowed from
+the parent).  </li>
+<li>Check if there is a $Delete column for the child object and if the column contains
+a Maximo YORN true value (1 or Y). If so then do not create the child object or
+delete it if it is already there. </li>
+<li>If a child record is found, then upd ate the attributes of this child object  </li>
+<li>If no child record is found, then add a new child record to the child set and set
+the given child attribute values.  </li>
+<li>Save the parent object set  </li>
+</ul>
+<p>If there is an error (either during setting of attributes or during saving) the behavior
+depends on the processing mode. If no column $IMPORTERROR is available in your
+worksheet (processing mode "Stop on Error") an error message is displayed to the
+user and the import is aborted. Every error message during import contains the line
+number of the Excel file and the attribute name which causes the problem. If a column
+$IMPORTERROR is available (processing mode "Continue on Error") the error message
+is not displayed to the user but written to the $IMPORTERROR column of the
+corresponding row. Also, the problematic attribute is highlighted with a red
+background and the import is not aborted but continues with the next row.</p>
+<p>NOTICE:</p>
+<ul>
+<li>As against the Simple Import no columns can be added to the XLS worksheets for
+the extended import on the parent data (the XLS handling library does not allow to
+insert columns in the middle of the worksheet in front of the separation column)  </li>
+<li>If an attribute in the Excel document in the left of the separation column is empty
+(no value in the Excel cell) then t he attribute is set to NULL. It is therefore important
+to remove all columns from the excel document which should or can not set to null
+or fill all columns with the appropriate values  </li>
+<li>Object attributes are only set if the new value from the Excel document is different
+from the current value in the MBO!  </li>
+<li>The unique ID column for the child data is added to the worksheet, if it is not already
+available. For new child objects the unique ID of this object is saved in the XLS file.  </li>
+<li>If the unique ID columns are available on the parent object, then they are filled with
+the generated unique ID for the object.</li>
+</ul>
+<h3 id="after-the-import">After the Import</h3>
+<p>The steps after processing of the uploaded XLS file (display import summary dialog,
+download of the processed XLS file to the client, update list view of the application)
+are identical to the Simple Import and are not repeated here.</p>
+<h2 id="multilevel-import">Multilevel Import</h2>
+<p>The Multilevel import is a extension to the extended import. The extended import as
+described above can import 1:n Relations. With multilevel imp ort this concept is now
+extended to more than 2 levels<br />
+For the majority of data in Maximo the Extended Import is sufficient. However, there
+are some Maximo applications where simple parent child relations are not enough
+and 1:n:m is required. These are:  </p>
+<ul>
+<li>Security Groups - applications - options  </li>
+<li>Problem - cause - remedy  </li>
+</ul>
+<p>Multilevel searchresult download and multilevel template generation are not
+supported. You have to manually create the excel importfiles for multilevel import.
+The layout of the multilevel import file is similar to the extended import with some
+additional requirements.
+The following chapters explain the content and layout of the importfile with an
+example.</p>
+<h3 id="security-groups-applications-options">Security Groups - Applications - Options</h3>
+<p>Multilevel import allows the activation and deactivation of sigoptions in applications
+for specific security groups. The importfile has 3 levels:</p>
+<ol>
+<li>Security Group (MAXGROUP)</li>
+<li>Application (MAXAPPS)</li>
+<li>Options (SIGOPTION)</li>
+</ol>
+<p>A screenshot of the excel import file is shown in Illustration 30: Multilevel Import File
+   for Security Groups Applications Options. The content of the import file
+   is similar to the extended import.<br />
+   When creating a import file for the multilevel import make sure that:  </p>
+<ul>
+<li>the different levels are separated with a separation column  </li>
+<li>the first row in the separation column contains the names of the two objects
+   separated with a dot. In the example below the first separation column
+   contains MAXGROUP.MAXAPPS. This means that right of the separation
+   column (the child side) where is a MAXAPPS entry and the higher level object
+   is MAXGROUP.  </li>
+<li>The second row in the separ ation column contains the relation name for the
+   two objects in row 1. The sample below uses the relationship MAXAPPS
+   between the objects MAXGROUP and MAXAPPS and the relationship
+   SIGOOTHER between MAXAPPS and SIGOPTION.  </li>
+</ul>
+<p><img alt="" src="../img/img_8.png" /></p>
+<p>The above import file enables the some of the SIGOPTIONS for the EAM Data
+Management Tool in the Action application for the security group MAXADMIN.</p>
+<h2 id="failure-class-problem-cause-remedy">Failure Class - Problem - Cause - Remedy</h2>
+<p>Another practical example for a multilevel import is the Maximo application Failure
+Codes. In this application we have four Levels, which are imported during a single import. 
+The hierarchical structure is as follows:</p>
+<ol>
+<li>one failure class can contain any number of problems</li>
+<li>one problem can have any number of causes</li>
+<li>one cause can have any number of remedies</li>
+</ol>
+<p>You can download a sample import file for problem
+   cause remedy from the EAM
+   Software sample library.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 - SPIE RODIAS GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>
